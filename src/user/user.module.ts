@@ -5,6 +5,8 @@ import { UserMockService } from './user-mock.service';
 import { StoreConfigOld } from '../store/store.config';
 import { StoreService } from './store.service';
 import { StoreModule } from '../store/store.module';
+import { LoggerService } from '../logger/logger.service';
+import { SecurityService } from './security.service';
 
 const configFacebook = {
   appId: 'facebook001',
@@ -49,6 +51,6 @@ function createStore(config: StoreConfigOld): StoreService {
       token: 'STORE_CONFIG',
       optional: true
     }]
-  }]
+  }, LoggerService, SecurityService]
 })
 export class UserModule { }
